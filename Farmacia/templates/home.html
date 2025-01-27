@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Sistema de Gestión de Farmacias</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.home.css' %}">
+
+</head>
+<body>
+<!-- Header -->
+<header class="text-center py-4">
+    <h1>Sistema de Gestión de Farmacias</h1>
+</header>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cliente' %}" >Compra en Linea </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Landing Page -->
+<main class="container landing-container">
+    <!-- Text Section -->
+    <div class="landing-text">
+        <h2>Bienvenido a la Plataforma</h2>
+        <p>
+            Nuestro sistema simplifica la gestión de farmacias, permitiéndote administrar inventarios,
+            ventas, y transferencias de manera eficiente. Optimiza tu negocio con las mejores herramientas tecnológicas.
+        </p>
+        <a href="#" class="btn-learn-more">Descubre más</a>
+    </div>
+
+    <!-- Image Section -->
+    <div class="landing-image">
+        <img src="{% static 'images/medicine.png' %}" alt="Pharmacy Management">
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-3">
+    <div class="container text-center">
+        <p>&copy; 2025 Sistema de Gestión de Farmacias. Todos los derechos reservados.</p>
+        <p>Desarrollado con ❤️ para optimizar tu farmacia.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
+
+
+
+

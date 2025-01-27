@@ -1,0 +1,66 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .topbar {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card .card-body {
+            text-align: center;
+        }
+        .card .card-title {
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+        .btn-logout {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-logout:hover {
+            background-color: #c82333;
+        }

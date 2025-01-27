@@ -1,0 +1,153 @@
+{% load static %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Farmacias</title>
+    <link rel="stylesheet" href="{% static 'js/bootstrap.js' %}">
+    <link rel="stylesheet" href="{% static 'css/style.ad.css' %}">
+    <style>
+        /* Estilo de las imágenes para adaptarse sin deformarse */
+        .card-img-top {
+            width: 100%; /* La imagen ocupará el ancho completo del contenedor */
+            height: auto; /* Mantendrá su relación de aspecto */
+            max-height: 150px; /* Altura máxima para mantener consistencia entre las tarjetas */
+            object-fit: contain; /* Se ajustará dentro del espacio sin recortarse ni deformarse */
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #2c3e50; /* Color de fondo del sidebar */
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        .sidebar h4 {
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #bdc3c7; /* Color de texto */
+            font-size: 1rem;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px; /* Bordes redondeados */
+            transition: all 0.3s ease; /* Efecto de transición */
+        }
+
+        .sidebar a.active, /* Enlace activo */
+        .sidebar a:hover {
+            background-color: #34495e; /* Color al hacer hover o activo */
+            color: #fff; /* Color de texto */
+        }
+
+        .sidebar a i {
+            margin-right: 10px; /* Espaciado entre el icono y el texto */
+        }
+
+        /* Ajuste responsivo */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 200px; /* Ancho reducido en pantallas pequeñas */
+            }
+
+            .sidebar h4 {
+                font-size: 1.2rem;
+            }
+
+            .sidebar a {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<!-- Sidebar -->
+<div class="sidebar">
+    <h4 class="text-center">Farmacia</h4>
+    <a href="#">Dashboard</a>
+    <a href="#">Inventario</a>
+    <a href="#">Ventas</a>
+    <a href="#">Sucursales</a>
+    <a href="#">Roles</a>
+    <a href="#">Reportes</a>
+    <a href="#">Configuraciones</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Topbar -->
+    <div class="topbar">
+        <h5>Bienvenido, Administrador</h5>
+        <button class="btn-logout">Cerrar Sesión</button>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="mt-4">
+        <h2>¿Qué estás buscando?</h2>
+        <div class="card-grid mt-4">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/user.png' %}" alt="Usuarios">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Gestionar usuarios y roles</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/about-medicine.png' %}" alt="Inventario">
+                <div class="card-body">
+                    <h5 class="card-title">Inventario</h5>
+                    <p class="card-text">Control de medicamentos</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/medicines.jpg' %}" alt="Ventas">
+                <div class="card-body">
+                    <h5 class="card-title">Ventas</h5>
+                    <p class="card-text">Registrar y analizar ventas</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/location-blue.png' %}" alt="Sucursales">
+                <div class="card-body">
+                    <h5 class="card-title">Sucursales</h5>
+                    <p class="card-text">Gestionar sucursales</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/search-icon.png' %}" alt="Reportes">
+                <div class="card-body">
+                    <h5 class="card-title">Reportes</h5>
+                    <p class="card-text">Generar reportes detallados</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/email.png' %}" alt="Configuraciones">
+                <div class="card-body">
+                    <h5 class="card-title">Configuraciones</h5>
+                    <p class="card-text">Ajustar preferencias</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
