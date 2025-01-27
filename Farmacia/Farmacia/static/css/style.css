@@ -1,0 +1,50 @@
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+            text-align: center;
+        }
+        .landing-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+        }
+        .landing-text {
+            max-width: 50%;
+        }
+        .landing-text h2 {
+            color: #007bff;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .landing-text p {
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+        .landing-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .btn-learn-more {
+            margin-top: 20px;
+            background-color: #00bfff;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-learn-more:hover {
+            background-color: #007bff;
+        }

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta - Farmacia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        .btn-request {
+            background-color: #ffc107;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-request:hover {
+            background-color: #e0a800;
+        }
+        #branchOptions {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        #branchOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <h1>Punto de Venta para Farmacia</h1>
+    <div class="nav-links">
+        <a href="#">Categorías</a>
+        <a href="#">Proveedores</a>
+        <a href="#">Productos</a>
+        <a href="#">Inventarios</a>
+    </div>
+    <div>
+    <span>Hola, empleado</span>
+    <a href="#" class="btn btn-danger btn-sm ms-2">Cerrar Sesión</a>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container mt-4">
+    <div class="mb-4">
+        <label for="stockSearch" class="form-label">Buscar en Stock</label>
+        <input type="text" class="form-control" id="stockSearch" placeholder="Buscar por nombre, categoría o ID">
+    </div>
+
+    <h3 class="mb-3">Stock Disponible</h3>
+    <div class="table-container mb-4">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Presentación</th>
+                    <th>Categoría</th>
+                    <th>Disponibilidad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Paracetamol</td>
+                    <td>Tabletas 500mg</td>
+                    <td>Analgésicos</td>
+                    <td>20</td>
+                    <td><button class="btn btn-sm btn-primary">Seleccionar</button></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Ibuprofeno</td>
+                    <td>Tabletas 200mg</td>
+                    <td>Analgésicos</td>
+                    <td>0</td>
+                        <td><button class="btn btn-sm btn-request" onclick="showBranchOptions()">Solicitar</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <h3 class="mb-3">Transacción - Venta</h3>
+    <form>
+        <div class="row">
+            <!-- Datos del Cliente -->
+            <div class="col-md-6">
+                <h5>Datos del Cliente</h5>
+                <div class="mb-3">
+                    <label for="clientName" class="form-label">Nombre del Cliente</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="Ingrese el nombre del cliente">
+                </div>
+                <div class="mb-3">
+                    <label for="clientPhone" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="clientPhone" placeholder="Ingrese el teléfono">
+                </div>
+            </div>
+            <!-- Selección de Productos -->
+            <div class="col-md-6">
+                <h5>Seleccionar Productos</h5>
+                <div class="mb-3">
+                    <label for="productSearch" class="form-label">Buscar Producto</label>
+                    <input type="text" class="form-control" id="productSearch" placeholder="Buscar por nombre o ID">
+                </div>
+                <button type="button" class="btn btn-primary">Agregar a la Venta</button>
+            </div>
+        </div>
+
+        <h5 class="mt-4">Resumen de la Venta</h5>
+        <div class="table-container">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paracetamol</td>
+                        <td>2</td>
+                        <td>$5.00</td>
+                        <td>$10.00</td>
+                        <td><button class="btn btn-sm btn-danger">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-end mt-3">
+            <h5>Total: $10.00</h5>
+            <button type="submit" class="btn btn-success">Generar Factura</button>
+        </div>
+    </form>
+</div><!-- Overlay para el cuadro pequeño -->
+<div id="branchOverlay"></div>
+
+<!-- Contenedor del cuadro pequeño para sucursales -->
+<div id="branchOptions">
+    <h5 class="mb-3">Seleccionar Sucursal</h5>
+    <label for="branchSelect" class="form-label">Elija una sucursal</label>
+    <select class="form-select" id="branchSelect">
+        <option selected disabled>Seleccione una sucursal...</option>
+        <option value="1">Sucursal 1 - Centro</option>
+        <option value="2">Sucursal 2 - Norte</option>
+        <option value="3">Sucursal 3 - Sur</option>
+        <option value="4">Sucursal 4 - Este</option>
+        <option value="5">Sucursal 5 - Oeste</option>
+    </select>
+    <div class="d-flex justify-content-end mt-3">
+        <button class="btn btn-secondary me-2" onclick="closeBranchOptions()">Cancelar</button>
+        <button class="btn btn-primary">Confirmar</button>
+    </div>
+</div>
+
+<script>
+    // Mostrar cuadro de sucursal
+    function showBranchOptions() {
+        document.getElementById('branchOptions').style.display = 'block';
+        document.getElementById('branchOverlay').style.display = 'block';
+    }
+
+    // Ocultar cuadro de sucursal
+    function closeBranchOptions() {
+        document.getElementById('branchOptions').style.display = 'none';
+        document.getElementById('branchOverlay').style.display = 'none';
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

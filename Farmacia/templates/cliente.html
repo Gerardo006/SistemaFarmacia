@@ -1,0 +1,129 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicina y Salud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Barra de navegación -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-800">Medicina y Salud</h1>
+            <nav>
+                <a href="#productos" class="text-gray-700 hover:text-blue-500 mx-4">Productos</a>
+                <a href="#contacto" class="text-gray-700 hover:text-blue-500 mx-4">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto py-4">
+    <label for="search" class="block text-gray-700 text-lg mb-2">Buscar Medicamento:</label>
+    <div class="flex items-center">
+        <input type="text" id="search" name="search" placeholder="Buscar medicamento..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-400">
+        <button class="bg-blue-500 text-white px-4 py-2 ml-2 rounded-md hover:bg-blue-600">Buscar</button>
+    </div>
+</div>
+
+    <!-- Sección de productos -->
+    <section id="productos" class="container mx-auto px-6 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Nuestros Productos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Producto 1 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/p-1.jpg' %}" alt="Producto 1" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">1:1 Paracetamol (Rojo)</h3>
+                <p class="text-gray-500 text-sm">60 cápsulas .</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$30</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/p-2.jpg' %}" alt="Producto 2" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">1:1 Nolotil (Verde)</h3>
+                <p class="text-gray-500 text-sm">60 cápsulas .</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$30</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/p-3.jpg' %}" alt="Producto 3" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">1:1 Eutirox (Rosa)</h3>
+                <p class="text-gray-500 text-sm">60 cápsulas .</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$30</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/p-4.jpg' %}" alt="Producto 4" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">ventolin Capsules</h3>
+                <p class="text-gray-500 text-sm">60 cápsulas .</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$30</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/p-5.jpg' %}" alt="Producto 5" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">Sintrom Capsules</h3>
+                <p class="text-gray-500 text-sm">100 cápsulas puras.</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$40</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/p-6.jpg' %}" alt="Producto 6" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">Sleep Aid Capsules</h3>
+                <p class="text-gray-500 text-sm">60 cápsulas para el sueño.</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$35</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/about-medicine.png' %}" alt="Producto 7" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">Energy Capsules</h3>
+                <p class="text-gray-500 text-sm">60 cápsulas energéticas.</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$35</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <img src="{% static 'images/medicines.jpg' %}" alt="Producto 8" class="w-full h-40 object-cover mb-4">
+                <h3 class="text-lg font-semibold text-gray-700">Immune Boost Capsules</h3>
+                <p class="text-gray-500 text-sm">60 cápsulas para el sistema inmune.</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-blue-600 font-bold">$40</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Comprar ahora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+</html>

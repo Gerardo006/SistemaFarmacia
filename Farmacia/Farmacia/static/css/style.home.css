@@ -1,0 +1,80 @@
+ header {
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        nav.navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f8f9fa;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #4caf50;
+        }
+
+        .landing-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 0;
+            gap: 2rem;
+        }
+
+        .landing-text {
+            max-width: 50%;
+        }
+
+        .landing-text h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .landing-text p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        .btn-learn-more {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background-color: #4caf50;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-learn-more:hover {
+            background-color: #388e3c;
+        }
+
+        .landing-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #343a40;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
